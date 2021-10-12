@@ -1,0 +1,179 @@
+<!-- <pre>
+<form (ngSubmit)="insertData()" >
+    <input type="text" name="name" placeholder="Name" [(ngModel)]="student.name">
+    <label>Gender</label>
+    Male<input type="radio" name="gender" value="Male"  [(ngModel)]="student.gender">
+   Femail<input type="radio" name="gender" value="Femail"  [(ngModel)]="student.gender">
+    <input type="text" name="dob" placeholder="DOB" [(ngModel)]="student.dob">
+    <input type="text" name="department" placeholder="Department" [(ngModel)]="student.department">
+    <input type="text" name="email" placeholder="Email" [(ngModel)]="student.email">
+    <input type="text" name="phone" placeholder="Phone no:" [(ngModel)]="student.phone">
+    <input type="password" name="password" placeholder="Password" [(ngModel)]="student.password">
+    <input type="text" name="confirmpassword" placeholder="Confirm Password" [(ngModel)]="student.confirmpassword">
+    <button class="btn btn-success" >Submit</button>
+</form>
+</pre> -->
+
+<div class="container-fluid">
+
+<section class="vh-100 gradient-custom">
+    <div class="container py-5 h-100">
+      <div class="row justify-content-center align-items-center h-100">
+        <div class="col-12 col-lg-9 col-xl-7">
+          <div class="card shadow-2-strong card-registration" style="border-radius: 15px;">
+            <div class="card-body p-4 p-md-5">
+              <h3 class="mb-4 pb-2 pb-md-0 mb-md-5">Registration Form</h3>
+              <form  (ngSubmit)="insertData() ; myForm.reset() " #myForm="ngForm">
+                
+
+
+                <div class="row"  *ngIf="showMsg">
+                  <div class="col-xs-12">
+                    <p class="alert alert-success">
+                        <strong>Registration Success!</strong> Welcome to our page!.
+          
+                    </p>
+                  </div>
+                </div>
+
+
+
+
+                <div class="row">
+                  <div class="col-md-6 mb-4">
+  
+                    <div class="form-outline">
+                      <input type="text"  name="name" class="form-control form-control-lg" [(ngModel)]="student.name" />
+                      <label class="form-label">Full Name</label>
+                    </div>
+  
+                  </div>
+                  <div class="col-md-6 mb-4">
+  
+                    <div class="form-outline">
+                      <input type="text"  name="department" class="form-control form-control-lg"[(ngModel)]="student.department" />
+                      <label class="form-label"  >Department</label>
+                    </div>
+  
+                  </div>
+                </div>
+  
+                <div class="row">
+                  <div class="col-md-6 mb-4 d-flex align-items-center">
+  
+                    <div class="form-outline datepicker w-100">
+                      <input
+                        type="text"
+                        class="form-control form-control-lg"
+                        name="dob"
+                        [(ngModel)]="student.dob"
+                      />
+                      <label for="birthdayDate" class="form-label">Birthday</label>
+                    </div>
+  
+                  </div>
+                  <div class="col-md-6 mb-4">
+  
+                    <h6 class="mb-2 pb-1">Gender: </h6>
+  
+                    <div class="form-check form-check-inline">
+                      <input
+                        class="form-check-input"
+                        type="radio"
+                        name="inlineRadioOptions"
+                        id="femaleGender"
+                        value="Female"
+                        checked
+                        [(ngModel)]="student.gender"
+                      />
+                      <label class="form-check-label" for="femaleGender">Female</label>
+                    </div>
+  
+                    <div class="form-check form-check-inline">
+                      <input
+                        class="form-check-input"
+                        type="radio"
+                        name="inlineRadioOptions"
+                        id="maleGender"
+                        value="Male"
+                        [(ngModel)]="student.gender"
+                      />
+                      <label class="form-check-label" for="maleGender">Male</label>
+                    </div>
+  
+                    <div class="form-check form-check-inline">
+                      <input
+                        class="form-check-input"
+                        type="radio"
+                        name="inlineRadioOptions"
+                        id="otherGender"
+                        value="Other"
+                        [(ngModel)]="student.gender"
+                      />
+                      <label class="form-check-label" for="otherGender">Other</label>
+                    </div>
+  
+                  </div>
+                </div>
+  
+                <div class="row">
+                  <div class="col-md-6 mb-4 pb-2">
+  
+                    <div class="form-outline">
+                      <input type="email" name="email" class="form-control form-control-lg" [(ngModel)]="student.email" />
+                      <label class="form-label" >Email</label>
+                    </div>
+  
+                  </div>
+                  <div class="col-md-6 mb-4 pb-2">
+  
+                    <div class="form-outline">
+                      <input type="tel" name="phone" class="form-control form-control-lg" [(ngModel)]="student.phone" />
+                      <label class="form-label" >Phone Number</label>
+                    </div>
+  
+                  </div>
+                </div>
+
+
+                <div class="row">
+                    <div class="col-md-6 mb-4 pb-2">
+    
+                      <div class="form-outline">
+                        <input type="password" name="password" class="form-control form-control-lg" [(ngModel)]="student.password" 
+                        pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" required/>
+                        <label class="form-label" >Password</label>
+                      </div>
+    
+                    </div>
+                    <div class="col-md-6 mb-4 pb-2">
+    
+                      <div class="form-outline">
+                        <input type="text"  name="confirmpassword" class="form-control form-control-lg" [(ngModel)]="student.confirmpassword" 
+                        pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" required/>
+                        <label class="form-label"> Confirm Password  </label>
+                      </div>
+    
+                    </div>
+                  </div>
+  
+                <div class="mt-4 pt-2">
+                  <input class="btn btn-primary btn-lg" type="submit" value="Submit" onclick="success()" />
+                </div>
+  
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <script>
+    function success(){
+      alert("Your data has been successfully registred..");
+    }
+  </script>
+</div>
+
+
+  <app-footer></app-footer>   

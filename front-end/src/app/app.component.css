@@ -1,0 +1,14 @@
+#carousel{
+    margin-top:0;
+}
+img{
+    width:100%;
+    height:400px;
+}
+#slidetext{
+    color:white;
+    font-size: 80px;
+}
+#slidediv{
+    padding-top:10px;
+}
